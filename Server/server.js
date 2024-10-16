@@ -8,7 +8,7 @@ import{serviceRouter} from "../Server/Router/servies.router.js"
 import { adminRouter } from "./Router/admin-router.js";
 
 const app = express();
-
+const PORT = process.env.PORT || 4000;
 //cors
 const corsOption = {
 origin : "http://localhost:5173",
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 //connection cheek kerna se phala hum error check ker reha ha
 app.use(middleerror)
-const PORT = 5000;
+// const PORT = 5000;
 connectdbs().then(()=>{
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
